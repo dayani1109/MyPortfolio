@@ -8,6 +8,7 @@
 <meta property="og:description" content="IT Undergraduate at SLIIT | MERN Stack Developer | QA Engineer"/>
 <meta property="og:image" content="https://placehold.co/1200x630/0a0a0f/7c3aed?text=Dayani+De+Silva"/>
 <title>Dayani De Silva | Portfolio</title>
+<link rel="icon" type="image/png" href="icon/logo.png">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -64,11 +65,46 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 .socials{display:flex;gap:14px}
 .socials a{width:42px;height:42px;border-radius:50%;border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--muted);text-decoration:none;transition:.3s}
 .socials a:hover{border-color:var(--violet);color:var(--vl);box-shadow:0 0 14px var(--gv);transform:translateY(-3px)}
-.photo-wrap{display:flex;justify-content:center;position:relative;align-items:center}
-.photo-ring{width:clamp(240px,26vw,360px);height:clamp(240px,26vw,360px);border-radius:50%;padding:4px;background:linear-gradient(135deg,var(--violet),var(--cyan));box-shadow:0 0 60px var(--gv),0 0 100px var(--gc)}
+.photo-wrap{
+    display:flex;
+    justify-content:center;
+    position:relative;
+    align-items:center;
+}
+
+.photo-socials{
+    position:absolute;
+    right:-95px;
+    top:50%;
+    transform:translateY(-50%);
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+}
+
 @keyframes hue{to{filter:hue-rotate(360deg)}}
-.photo-ring img{width:100%;height:100%;border-radius:50%;object-fit:cover;border:4px solid var(--bg)}
-.photo-socials{position:absolute;right:-85px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:16px}
+
+.photo-ring{
+    width:clamp(280px,30vw,420px);
+    height:clamp(380px,42vw,550px);
+    border-radius:24px;
+    padding:4px;
+
+    background:linear-gradient(135deg,var(--violet),var(--cyan));
+    box-shadow:
+        0 0 60px var(--gv),
+        0 0 100px var(--gc);
+}
+
+.photo-ring img{
+    width:100%;
+    height:100%;
+    border-radius:20px;
+    object-fit:cover;  /* shows full image */
+    background:var(--bg);
+    border:4px solid var(--bg);
+}
+
 .photo-social-link{width:54px;height:54px;border-radius:50%;border:2px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--muted);text-decoration:none;transition:.35s;background:var(--card);box-shadow:0 6px 18px rgba(0,0,0,.3),inset 0 1px 1px rgba(255,255,255,.08);position:relative;overflow:hidden}
 .photo-social-link::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 30%,rgba(255,255,255,.15) 0%,transparent 60%);opacity:0;pointer-events:none}
 .photo-social-link:hover{border-color:var(--violet);color:var(--vl);transform:translateY(-6px) scale(1.1) rotateZ(8deg);box-shadow:0 12px 32px rgba(124,58,237,.35),inset 0 1px 1px rgba(255,255,255,.12),0 0 28px rgba(124,58,237,.25);background:linear-gradient(135deg,var(--card),rgba(124,58,237,.08))}
@@ -370,14 +406,56 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:56px 0 28
 
 /* RESPONSIVE */
 @media(max-width:900px){
-  .hero-content{grid-template-columns:1fr;text-align:center}
-  .photo-wrap{order:-1;margin-bottom:40px}.hero-ctas,.socials{justify-content:center}
-  .hero-bio{margin:0 auto 28px}
-  .photo-socials{position:static;transform:none;display:flex;flex-direction:row;gap:12px;justify-content:center;margin-top:24px}
-  .photo-social-link{width:48px;height:48px}
-  .about-grid,.contact-grid{grid-template-columns:1fr}
-  .footer-grid{grid-template-columns:1fr 1fr}
+
+  .hero-content{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+
+  .photo-wrap{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    margin-top:30px;
 }
+
+  .hero-ctas,.socials{
+    justify-content:center;
+  }
+
+  .hero-bio{
+    margin:0 auto 28px;
+  }
+
+  /* ONLY MOBILE */
+  .photo-socials{
+    position:static;
+    right:auto;
+    top:auto;
+    transform:none;
+
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    gap:12px;
+    margin-top:20px;
+  }
+
+  .photo-social-link{
+    width:48px;
+    height:48px;
+  }
+
+  .about-grid,
+  .contact-grid{
+    grid-template-columns:1fr;
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr 1fr;
+  }
+}
+
 @media(max-width:680px){
   .nav-links,.btn-cv{display:none}.ham{display:flex}
   .section{padding:68px 0}
@@ -539,7 +617,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:56px 0 28
       </div>
       <div class="photo-wrap">
         <div class="photo-ring">
-          <img src="image.png" alt="Dayani De Silva"/>
+          <img src="image5.png" alt="Dayani De Silva"/>
         </div>
         <div class="photo-socials">
           <a href="https://github.com/dayani1109" target="_blank" title="GitHub" aria-label="GitHub" class="photo-social-link">
@@ -1037,19 +1115,19 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:56px 0 28
 
     <div class="cv-options">
 
-      <a href="cv/FullStackEngineerCV.pdf"
+      <a href="cv/Dayani_Full_stack.pdf"
          download
          class="cv-option">
          💻 Full Stack Engineer
       </a>
 
-      <a href="cv/UIUXDesignerCV.pdf"
+      <a href="cv/Dayani_UIUX.pdf"
          download
          class="cv-option">
          🎨 UI/UX Designer
       </a>
 
-      <a href="cv/QAEngineerCV.pdf"
+      <a href="cv/Dayani_QA.pdf"
          download
          class="cv-option">
          🧪 QA Engineer
